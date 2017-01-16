@@ -16,5 +16,13 @@ namespace LastSeen.Droid
 		{
 			return new App();
 		}
+
+		protected override void InitializeLastChance()
+		{
+			base.InitializeLastChance();
+			MvvmCross.Plugins.File.PluginLoader.Instance.EnsureLoaded();
+			MvvmCross.Plugins.DownloadCache.PluginLoader.Instance.EnsureLoaded();
+			MvvmCross.Plugins.Json.PluginLoader.Instance.EnsureLoaded();
+		}
 	}
 }
