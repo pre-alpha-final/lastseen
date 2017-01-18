@@ -153,11 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\FillWidthMvxImageView.cs" />
+    <Compile Include="Controls\GridMvxRecyclerView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="TemplateSelectors\ItemThumbnailTemplateSelector.cs" />
-    <Compile Include="TemplateSelectors\SectionTemplateSelector.cs" />
     <Compile Include="Views\LastSeenView.cs" />
   </ItemGroup>
   <ItemGroup>
