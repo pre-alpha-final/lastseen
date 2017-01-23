@@ -1,4 +1,4 @@
-using Android.Content;
+﻿using Android.Content;
 using Android.Graphics.Drawables;
 using Android.Util;
 using Android.Views;
@@ -11,8 +11,6 @@ namespace LastSeen.Droid.Controls
 	 */
 	public class FillWidthMvxImageView : MvxAppCompatImageView
 	{
-		private bool _measured;
-
 		public FillWidthMvxImageView(Context context, IAttributeSet attrs) : base(context, attrs)
 		{
 		}
@@ -22,18 +20,11 @@ namespace LastSeen.Droid.Controls
 			var width = MeasureSpec.GetSize(widthMeasureSpec);
 			double height = MeasureSpec.GetSize(widthMeasureSpec);
 
-			if (_measured)
-			{
-				base.OnMeasure(widthMeasureSpec, heightMeasureSpec);
-				return;
-			}
-
 			var drawable = Drawable as BitmapDrawable;
 			if (drawable?.Bitmap != null)
 			{
 				var ratio = (double)drawable.Bitmap.Width / width;
 				height = drawable.Bitmap.Height / ratio;
-				_measured = true;
 			}
 			else // Recycler resize fix
 			{
