@@ -186,7 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LastSeen.Core\LastSeen.Core.csproj">
-      <Project>{9427a6c2-7944-477d-ab88-7bdc1f56bfb3}</Project>
+      <Project>{7cb535c3-03e4-4b4f-839f-cbb73867a8eb}</Project>
       <Name>LastSeen.Core</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using LastSeen.Core.POs;
+using LastSeen.Core.Sevices;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 
 namespace LastSeen.Core.ViewModels
 {
 	public class LastSeenViewModel : MvxViewModel
 	{
-
 		private Dictionary<string, List<ItemPO>> _sectionDictionary;
 		public Dictionary<string, List<ItemPO>> SectionDictionary
 		{
@@ -20,51 +21,7 @@ namespace LastSeen.Core.ViewModels
 
 		public override void Start()
 		{
-			SectionDictionary = new Dictionary<string, List<ItemPO>>
-			{
-				{
-					"SectionA", new List<ItemPO>
-					{
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-					}
-				},
-				{
-					"SectionB", new List<ItemPO>
-					{
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-					}
-				},
-				{
-					"SectionC", new List<ItemPO>
-					{
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-					}
-				},
-			};
+			SectionDictionary = Mvx.Resolve<ILastSeenService>().GetItems();
 		}
 	}
 }
