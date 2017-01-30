@@ -17,11 +17,23 @@ namespace LastSeen.Core.Infrastructure.Deserialization
 		public int Season { get; set; }
 		public int Episode { get; set; }
 
+		// Default constructor for use with deserialization
+		public LastSeenItem()
+		{
+		}
+
+		public LastSeenItem(bool initEmpty)
+		{
+			if (initEmpty)
+				InitEmpty();
+		}
+
 		public void InitEmpty()
 		{
 			Id = new Guid().ToString();
 			Image = "";
 			Name = "<unknown>";
+			Tag = "<unknown>";
 			Title = "<unknown>";
 			Description = "<no description>";
 			Season = 0;
