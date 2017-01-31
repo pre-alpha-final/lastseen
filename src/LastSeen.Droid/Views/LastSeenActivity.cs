@@ -1,5 +1,6 @@
 using Android.App;
 using Android.OS;
+using Android.Views;
 using LastSeen.Core.ViewModels;
 using MvvmCross.Droid.Views;
 
@@ -13,6 +14,7 @@ namespace LastSeen.Droid.Views
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
 		{
+			RequestWindowFeature(WindowFeatures.NoTitle);
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.lastSeenView);
 		}
