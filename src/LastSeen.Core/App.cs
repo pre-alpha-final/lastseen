@@ -12,6 +12,10 @@ namespace LastSeen.Core
 	{
 		public App()
 		{
+		}
+
+		public override void Initialize()
+		{
 			Mapper.Initialize(cfg =>
 			{
 				cfg.AddProfile<LastSeenProfile>();
@@ -19,6 +23,8 @@ namespace LastSeen.Core
 
 			Mvx.LazyConstructAndRegisterSingleton<ILastSeenService, LastSeenService>();
 			Mvx.LazyConstructAndRegisterSingleton<IDataStorage, DataStorage>();
+
+			base.Initialize();
 		}
 	}
 }
