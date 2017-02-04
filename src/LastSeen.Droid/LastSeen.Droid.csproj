@@ -152,6 +152,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\FillWidthButtonBase.cs" />
     <Compile Include="Controls\FillWidthUrlImageButton.cs" />
     <Compile Include="Controls\FillWidthMvxImageView.cs" />
     <Compile Include="Controls\GridMvxRecyclerView.cs" />
