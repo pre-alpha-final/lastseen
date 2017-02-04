@@ -3,8 +3,26 @@
 	android:id="@+id/last_seen_view"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:local="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="right"
+		android:orientation="horizontal">
+		<FillWidthImageButton
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:text="Foo"
+			local:standard_drawable="@drawable/off"
+			local:clicked_drawable="@drawable/on"/>
+		<FillWidthUrlImageButton
+			android:id="@+id/urlbutton"
+			android:layout_width="100dp"
+			android:layout_height="wrap_content"
+			android:text="Bar"/>
+	</LinearLayout>
 	<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
 		android:id="@+id/section_recycler"
 		android:layout_width="match_parent"

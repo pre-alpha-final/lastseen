@@ -1,23 +1,20 @@
-﻿using Android.Content;
+using Android.Content;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
-using MvvmCross.Droid.Support.V7.AppCompat.Widget;
 
 namespace LastSeen.Droid.Controls
 {
-	/*
-	 * Fills available width and then sets hight, keeping aspect ratio
-	 */
-	public class FillWidthMvxImageView : MvxAppCompatImageView
+	public class FillWidthButtonBase : AppCompatButton
 	{
 		private bool _measured;
 		private bool _hasDrawable;
 		private int _width;
 		private double _height;
 
-		public FillWidthMvxImageView(Context context, IAttributeSet attrs) : base(context, attrs)
+		public FillWidthButtonBase(Context context, IAttributeSet attrs) : base(context, attrs)
 		{
 		}
 
@@ -33,7 +30,7 @@ namespace LastSeen.Droid.Controls
 			_width = MeasureSpec.GetSize(widthMeasureSpec);
 			_height = MeasureSpec.GetSize(widthMeasureSpec);
 
-			var drawable = Drawable as BitmapDrawable;
+			var drawable = Background as BitmapDrawable;
 			if (drawable?.Bitmap != null)
 			{
 				_hasDrawable = true;
