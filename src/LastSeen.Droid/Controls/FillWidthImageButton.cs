@@ -1,4 +1,5 @@
 using Android.Content;
+using Android.Content.Res;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.OS;
@@ -9,90 +10,54 @@ using Java.Lang;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Core;
 using MvvmCross.Platform.Platform;
+using System.Threading;
+using System.Threading.Tasks;
+using System;
 
 namespace LastSeen.Droid.Controls
 {
-	public class FillWidthImageButton : AppCompatButton
+	public class FillWidthImageButton : AppCompatButton, View.IOnTouchListener
 	{
-		private TouchListener _listener;
-		private IMvxImageHelper<Bitmap> _imageHelper;
+		private ManualResetEvent _standardDrawableAvailable;
+
+		private BitmapDrawable _standardDrawable;
+		public BitmapDrawable StandardDrawable
+		{
+			get { return _standardDrawable; }
+			set
+			{
+				_standardDrawable = value;
+				_standardDrawableAvailable.Set();
+			}
+		}
+
+		public BitmapDrawable ClickedDrawable { get; set; }
 
 		public FillWidthImageButton(Context context, IAttributeSet attrs) : base(context, attrs)
 		{
-			_listener = new TouchListener(this);
+			SetOnTouchListener(this);
+
+			_standardDrawableAvailable = new ManualResetEvent(false);
+
+			TypedArray typeArray = context.ObtainStyledAttributes(attrs, Resource.Styleable.FillWidthImageButton);
+			StandardDrawable = typeArray.GetDrawable(Resource.Styleable.FillWidthImageButton_standard_drawable) as BitmapDrawable;
+			ClickedDrawable = typeArray.GetDrawable(Resource.Styleable.FillWidthImageButton_clicked_drawable) as BitmapDrawable;
+			typeArray.Recycle();
 		}
 
-		public string ImageUrl
-		{
-			get { return ImageHelper?.ImageUrl; }
-			set
-			{
-				if (ImageHelper == null)
-					return;
-				ImageHelper.ImageUrl = value;
-			}
-		}
-
-		protected IMvxImageHelper<Bitmap> ImageHelper
-		{
-			get
-			{
-				if (_imageHelper == null)
-					if (!Mvx.TryResolve(out _imageHelper))
-						MvxTrace.Error(
-							"No IMvxImageHelper registered - you must provide an image helper before you can use a MvxImageView");
-					else
-						_imageHelper.ImageChanged += ImageHelperOnImageChanged;
-				return _imageHelper;
-			}
-		}
-
-		protected override void OnFinishInflate()
+		protected override async void OnFinishInflate()
 		{
 			base.OnFinishInflate();
 
 			Gravity = GravityFlags.Center;
-
-			//ImageUrl = "https://lh3.googleusercontent.com/YGqr3CRLm45jMF8eM8eQxc1VSERDTyzkv1CIng0qjcenJZxqV5DBgH5xlRTawnqNPcOp=w300";
-
-			using (var h = new Handler(Looper.MainLooper))
-				h.Post(() => Background = new BitmapDrawable(BitmapFactory.DecodeResource(Resources, Resource.Drawable.off)));
-
-			//var sidesPadding = Resources.DpToPx(15);
-			//var topPadding = Resources.DpToPx(7);
-			//SetPadding(sidesPadding, topPadding, sidesPadding, topPadding);
-
-			//SetAllCaps(false);
-
-			//if ((int)FontSize != -1)
-			//	SetTextAppearance();
-
-			//if (Checked)
-			//	SetOnStyle();
-			//else
-			//	SetOffStyle();
+			await Task.Run(() => _standardDrawableAvailable.WaitOne(5000));
+			UpdateButtonDrawable(false);
 		}
 
-		private void ImageHelperOnImageChanged(object sender, MvxValueEventArgs<Bitmap> mvxValueEventArgs)
+		private void UpdateButtonDrawable(bool clicked)
 		{
 			using (var h = new Handler(Looper.MainLooper))
-				h.Post(() => Background = new BitmapDrawable(Resources, mvxValueEventArgs.Value));
-		}
-
-		public override void SetMaxHeight(int maxHeight)
-		{
-			if (ImageHelper != null)
-				ImageHelper.MaxHeight = maxHeight;
-
-			base.SetMaxHeight(maxHeight);
-		}
-
-		public override void SetMaxWidth(int maxWidth)
-		{
-			if (ImageHelper != null)
-				ImageHelper.MaxWidth = maxWidth;
-
-			base.SetMaxWidth(maxWidth);
+				h.Post(() => Background = clicked ? ClickedDrawable : StandardDrawable);
 		}
 
 		protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec)
@@ -120,29 +85,17 @@ namespace LastSeen.Droid.Controls
 		{
 			if (disposing)
 			{
-				if (_imageHelper != null)
-				{
-					_imageHelper.ImageChanged -= ImageHelperOnImageChanged;
-					_imageHelper.Dispose();
-					if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
-						SetOnTouchListener(null);
-				}
+				if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
+					SetOnTouchListener(null);
 			}
 
 			base.Dispose(disposing);
 		}
 
-		private class TouchListener : Object, IOnTouchListener
+		private bool _clicked;
+		public bool OnTouch(View v, MotionEvent e)
 		{
-			private readonly FillWidthImageButton _button;
-			private bool _clicked;
-
-			public TouchListener(FillWidthImageButton styledButton)
-			{
-				_button = styledButton;
-			}
-
-			public bool OnTouch(View v, MotionEvent e)
+			Task.Run(async () =>
 			{
 				switch (e.Action)
 				{
@@ -155,16 +108,14 @@ namespace LastSeen.Droid.Controls
 					case MotionEventActions.Up:
 						if (_clicked)
 						{
+							await Task.Delay(250);
 							_clicked = false;
-
-							// change image 
-
-							// delegate changing image back
 						}
 						break;
 				}
-				return false;
-			}
+				UpdateButtonDrawable(_clicked);
+			});
+			return true;
 		}
 	}
 }

@@ -12,13 +12,17 @@
 		android:gravity="right"
 		android:orientation="horizontal">
 		<FillWidthImageButton
-			android:layout_width="75dp"
+			android:layout_width="150dp"
 			android:layout_height="wrap_content"
-			android:text="Foo" />
+			android:text="Foo"
+			local:standard_drawable="@drawable/off"
+			local:clicked_drawable="@drawable/on"/>
 		<FillWidthImageButton
-			android:layout_width="75dp"
+			android:layout_width="150dp"
 			android:layout_height="wrap_content"
-			android:text="Bar" />
+			android:text="Bar"
+			local:standard_drawable="@drawable/off"
+			local:clicked_drawable="@drawable/on"/>
 	</LinearLayout>
 	<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
 		android:id="@+id/section_recycler"
