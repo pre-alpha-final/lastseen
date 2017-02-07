@@ -12,7 +12,6 @@ namespace LastSeen.Droid.Controls
 	 */
 	public class FillWidthMvxImageView : MvxAppCompatImageView
 	{
-		private bool _measured;
 		private bool _hasDrawable;
 		private int _width;
 		private double _height;
@@ -23,7 +22,7 @@ namespace LastSeen.Droid.Controls
 
 		protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec)
 		{
-			if (_hasDrawable && _measured)
+			if (_hasDrawable)
 			{
 				base.OnMeasure(MeasureSpec.MakeMeasureSpec(_width, MeasureSpecMode.Exactly),
 					MeasureSpec.MakeMeasureSpec((int)_height, MeasureSpecMode.Exactly));
@@ -42,18 +41,11 @@ namespace LastSeen.Droid.Controls
 			}
 			else // Recycler resize fix
 			{
-				_width = 1;
 				_height = 1;
 			}
 
 			base.OnMeasure(MeasureSpec.MakeMeasureSpec(_width, MeasureSpecMode.Exactly),
 				MeasureSpec.MakeMeasureSpec((int)_height, MeasureSpecMode.Exactly));
-		}
-
-		protected override void OnDraw(Canvas canvas)
-		{
-			_measured = true;
-			base.OnDraw(canvas);
 		}
 	}
 }
