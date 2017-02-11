@@ -123,7 +123,7 @@ namespace LastSeen.Droid.Controls
 				}
 				UpdateButtonDrawable(_clicked);
 			});
-			return true;
+			return false;
 		}
 	}
 }

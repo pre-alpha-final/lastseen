@@ -8,6 +8,11 @@ namespace LastSeen.Core.ViewModels
 {
 	public class LastSeenViewModel : MvxViewModel
 	{
+		public LastSeenViewModel()
+		{
+			AddEditCommand = new MvxCommand(AddEdit);
+		}
+
 		private Dictionary<string, List<ItemPO>> _sectionDictionary;
 		public Dictionary<string, List<ItemPO>> SectionDictionary
 		{
@@ -22,6 +27,12 @@ namespace LastSeen.Core.ViewModels
 		public override void Start()
 		{
 			SectionDictionary = Mvx.Resolve<ILastSeenService>().GetItems();
+		}
+
+		public IMvxCommand AddEditCommand { get; }
+		private void AddEdit()
+		{
+			ShowViewModel<AddEditViewModel>();
 		}
 	}
 }
