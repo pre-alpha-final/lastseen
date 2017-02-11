@@ -11,7 +11,7 @@ namespace LastSeen.Droid.Views
 		{
 			base.OnResume();
 
-			StartActivity(new Intent(Application.Context, typeof(LastSeenActivity)));
+			StartActivity(new Intent(Application.Context, typeof(MainActivity)));
 		}
 	}
 }

@@ -8,8 +8,6 @@ using MvvmCross.Platform.Plugins;
 using MvvmCross.Plugins.DownloadCache.Droid;
 using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Shared.Presenter;
-using MvvmCross.Platform;
-using LastSeen.Droid.Infrastructure;
 
 namespace LastSeen.Droid
 {
@@ -34,9 +32,6 @@ namespace LastSeen.Droid
 
 		protected override IMvxAndroidViewPresenter CreateViewPresenter()
 		{
-			//var customPresenter = new CustomPresenter();
-			//Mvx.RegisterSingleton<ICustomPresenter>(customPresenter);
-			//return customPresenter;
 			return new MvxFragmentsPresenter(new[] { typeof(Setup).Assembly });
 		}
 

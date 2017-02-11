@@ -47,6 +47,7 @@
     <Compile Include="Sevices\Implementations\DataStorage.cs" />
     <Compile Include="Sevices\Implementations\LastSeenService.cs" />
     <Compile Include="Sevices\Stubs\LastSeenServiceStub.cs" />
+    <Compile Include="ViewModels\MainActivityViewModel.cs" />
     <Compile Include="ViewModels\AddEditViewModel.cs" />
     <Compile Include="ViewModels\LastSeenViewModel.cs" />
   </ItemGroup>
