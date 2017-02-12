@@ -6,7 +6,7 @@ using MvvmCross.Droid.Support.V4;
 
 namespace LastSeen.Droid.Views
 {
-	[MvxFragment(typeof(MainActivityViewModel), Resource.Layout.addEditView, IsCacheableFragment = false)]
+	[MvxFragment(typeof(MainActivityViewModel), Resource.Layout.addEditView, ViewModelType = typeof(AddEditViewModel), IsCacheableFragment = false)]
 	class AddEditFragment : BaseFragment<AddEditViewModel>
 	{
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)

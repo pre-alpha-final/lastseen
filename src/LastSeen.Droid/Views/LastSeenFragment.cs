@@ -7,7 +7,7 @@ using Android.Views;
 
 namespace LastSeen.Droid.Views
 {
-	[MvxFragment(typeof(MainActivityViewModel), Resource.Layout.lastSeenView, IsCacheableFragment = false)]
+	[MvxFragment(typeof(MainActivityViewModel), Resource.Layout.lastSeenView, ViewModelType = typeof(LastSeenViewModel), IsCacheableFragment = false)]
 	public class LastSeenFragment : BaseFragment<LastSeenViewModel>
 	{
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
