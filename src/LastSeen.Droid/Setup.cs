@@ -6,6 +6,8 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Platform.Plugins;
 using MvvmCross.Plugins.DownloadCache.Droid;
+using MvvmCross.Droid.Views;
+using MvvmCross.Droid.Shared.Presenter;
 
 namespace LastSeen.Droid
 {
@@ -26,6 +28,11 @@ namespace LastSeen.Droid
 			registry.Register<MvvmCross.Plugins.DownloadCache.PluginLoader, MvvmCross.Plugins.DownloadCache.Droid.Plugin>();
 			registry.Register<MvvmCross.Plugins.File.PluginLoader, MvvmCross.Plugins.File.Droid.Plugin>();
 			base.AddPluginsLoaders(registry);
+		}
+
+		protected override IMvxAndroidViewPresenter CreateViewPresenter()
+		{
+			return new MvxFragmentsPresenter(new[] { typeof(Setup).Assembly });
 		}
 
 		protected override void InitializeLastChance()
