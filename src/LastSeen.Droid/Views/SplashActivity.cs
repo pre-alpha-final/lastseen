@@ -4,7 +4,10 @@ using MvvmCross.Droid.Views;
 
 namespace LastSeen.Droid.Views
 {
-	[Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
+	[Activity(
+		Theme = "@style/MyTheme.Splash",
+		MainLauncher = true,
+		NoHistory = true)]
 	public class SplashActivity : MvxActivity
 	{
 		protected override void OnResume()
