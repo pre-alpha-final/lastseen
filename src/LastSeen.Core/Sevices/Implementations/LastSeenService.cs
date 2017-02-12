@@ -36,6 +36,9 @@ namespace LastSeen.Core.Sevices.Implementations
 
 		private void EnsureLoaded()
 		{
+			if (_lastSeenItems != null)
+				return;
+
 			_lastSeenItems = _dataStorage.Read<List<LastSeenItem>>(DataFile);
 
 			if (_lastSeenItems == null)
@@ -45,11 +48,6 @@ namespace LastSeen.Core.Sevices.Implementations
 					new LastSeenItem(true),
 				};
 			}
-		}
-
-		private void MapperInit()
-		{
-			
 		}
 	}
 }
