@@ -30,7 +30,7 @@ namespace LastSeen.Core.Infrastructure.Deserialization
 
 		public void InitEmpty()
 		{
-			Id = new Guid().ToString();
+			Id = Guid.NewGuid().ToString();
 			Image = "";
 			Name = "<unknown>";
 			Tag = "<unknown>";

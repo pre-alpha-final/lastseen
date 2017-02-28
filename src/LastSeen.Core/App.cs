@@ -21,7 +21,7 @@ namespace LastSeen.Core
 				cfg.AddProfile<LastSeenProfile>();
 			});
 
-			Mvx.LazyConstructAndRegisterSingleton<ILastSeenService, LastSeenServiceStub>();
+			Mvx.LazyConstructAndRegisterSingleton<ILastSeenService, LastSeenService>();
 			Mvx.LazyConstructAndRegisterSingleton<IDataStorage, DataStorage>();
 
 			base.Initialize();

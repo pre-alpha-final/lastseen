@@ -3,8 +3,10 @@ using LastSeen.Core.POs;
 
 namespace LastSeen.Core.Sevices
 {
-	interface ILastSeenService
+	public interface ILastSeenService
 	{
 		Dictionary<string, List<ItemPO>> GetItems();
+		ItemPO GetItem(string id);
+		void SaveItem(ItemPO itemPo);
 	}
 }

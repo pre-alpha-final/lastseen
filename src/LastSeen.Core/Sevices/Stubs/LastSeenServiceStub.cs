@@ -12,47 +12,56 @@ namespace LastSeen.Core.Sevices.Stubs
 				{
 					"SectionA", new List<ItemPO>
 					{
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
 					}
 				},
 				{
 					"SectionB", new List<ItemPO>
 					{
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
 					}
 				},
 				{
 					"SectionC", new List<ItemPO>
 					{
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
-						new ItemPO { Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
+						new ItemPO { Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png" },
 					}
 				},
 			};
 			return sectionDictionary;
+		}
+
+		public ItemPO GetItem(string id)
+		{
+			return new ItemPO {Name = "Name", Image = "http://www.clipartbest.com/cliparts/yTo/g7n/yTog7nLLc.png"};
+		}
+
+		public void SaveItem(ItemPO itemPo)
+		{
 		}
 	}
 }

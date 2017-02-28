@@ -9,6 +9,7 @@ namespace LastSeen.Core.Infrastructure.MapperProfiles
 		public LastSeenProfile()
 		{
 			CreateMap<LastSeenItem, ItemPO>();
+			CreateMap<ItemPO, LastSeenItem>();
 		}
 	}
 }

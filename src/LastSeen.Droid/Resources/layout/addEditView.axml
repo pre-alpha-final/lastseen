@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-		android:background="#000000">
-
+	android:background="#000000">
+	<FillWidthImageButton
+		android:id="@+id/button"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:text="Foo"
+		local:standard_drawable="@drawable/off"
+		local:clicked_drawable="@drawable/on"
+		local:MvxBind="Click SaveCommand"/>
+	<TextView
+		android:id="@+id/section_name"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Text ItemPo.Name"/>
+	<FillWidthMvxImageView
+		android:id="@+id/section_image"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		local:MvxBind="ImageUrl ItemPo.Image" />
 </LinearLayout>

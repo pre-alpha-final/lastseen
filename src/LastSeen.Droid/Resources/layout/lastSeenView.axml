@@ -19,13 +19,13 @@
 			android:text="Foo"
 			local:standard_drawable="@drawable/off"
 			local:clicked_drawable="@drawable/on"
-			local:MvxBind="Click AddEditCommand"/>
+			local:MvxBind="Click AddCommand"/>
 		<FillWidthUrlImageButton
 			android:id="@+id/urlbutton"
 			android:layout_width="100dp"
 			android:layout_height="wrap_content"
 			android:text="Bar"
-			local:MvxBind="Click AddEditCommand"/>
+			local:MvxBind="Click AddCommand"/>
 	</LinearLayout>
 	<MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView
 		android:id="@+id/section_recycler"

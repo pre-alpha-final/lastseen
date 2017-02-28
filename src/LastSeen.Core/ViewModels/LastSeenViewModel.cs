@@ -8,9 +8,12 @@ namespace LastSeen.Core.ViewModels
 {
 	public class LastSeenViewModel : MvxViewModel
 	{
-		public LastSeenViewModel()
+		private readonly ILastSeenService _lastSeenService;
+
+		public LastSeenViewModel(ILastSeenService lastSeenService)
 		{
-			AddEditCommand = new MvxCommand(AddEdit);
+			_lastSeenService = lastSeenService;
+			AddCommand = new MvxCommand(Add);
 		}
 
 		private Dictionary<string, List<ItemPO>> _sectionDictionary;
@@ -26,13 +29,13 @@ namespace LastSeen.Core.ViewModels
 
 		public override void Start()
 		{
-			SectionDictionary = Mvx.Resolve<ILastSeenService>().GetItems();
+			SectionDictionary = _lastSeenService.GetItems();
 		}
 
-		public IMvxCommand AddEditCommand { get; }
-		private void AddEdit()
+		public IMvxCommand AddCommand { get; }
+		private void Add()
 		{
-			ShowViewModel<AddEditViewModel>();
+			ShowViewModel<AddEditViewModel>(new { id = "" });
 		}
 	}
 }

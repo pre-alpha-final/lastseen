@@ -34,6 +34,32 @@ namespace LastSeen.Core.Sevices.Implementations
 			return sectionDictionary;
 		}
 
+		public ItemPO GetItem(string id)
+		{
+			EnsureLoaded();
+			return Mapper.Map<ItemPO>(_lastSeenItems.FirstOrDefault(e => e.Id == id));
+		}
+
+		public void SaveItem(ItemPO itemPo)
+		{
+			EnsureLoaded();
+			var newItem = Mapper.Map<LastSeenItem>(itemPo);
+			var oldItem = _lastSeenItems.FirstOrDefault(e => e.Id == newItem.Id);
+			var index = _lastSeenItems.IndexOf(oldItem);
+			if (index != -1)
+				_lastSeenItems[index] = newItem;
+			else
+			{
+				_lastSeenItems.Add(newItem);
+			}
+			SaveAllItems();
+		}
+
+		private void SaveAllItems()
+		{
+			_dataStorage.Write(DataFile, _lastSeenItems);
+		}
+
 		private void EnsureLoaded()
 		{
 			if (_lastSeenItems != null)

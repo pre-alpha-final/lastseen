@@ -23,7 +23,7 @@ namespace LastSeen.Droid.Views
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			if (DataContext != null)
-				ViewModels.Add(typeof(T), (IMvxViewModel)DataContext);
+				ViewModels[typeof(T)] = (IMvxViewModel)DataContext;
 			else
 			{
 				DataContext = ViewModels[typeof(T)];
