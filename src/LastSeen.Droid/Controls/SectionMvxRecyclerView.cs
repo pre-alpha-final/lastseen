@@ -10,11 +10,11 @@ using MvvmCross.Droid.Support.V7.RecyclerView;
 
 namespace LastSeen.Droid.Controls
 {
-	public class GridMvxRecyclerView : MvxRecyclerView, View.IOnClickListener
+	public class SectionMvxRecyclerView : MvxRecyclerView
 	{
 		public MvxCommand<string> GridTapCommand { get; set; }
 
-		public GridMvxRecyclerView(Context context, IAttributeSet attrs) : base(context, attrs)
+		public SectionMvxRecyclerView(Context context, IAttributeSet attrs) : base(context, attrs)
 		{
 		}
 
@@ -27,20 +27,19 @@ namespace LastSeen.Droid.Controls
 
 		public override void OnViewAdded(View child)
 		{
-			child.SetOnClickListener(this);
+			UpdateChild(child);
 			base.OnViewAdded(child);
 		}
 
-		public override void OnViewRemoved(View child)
+		private void UpdateChild(View child)
 		{
-			child.SetOnClickListener(null);
-			base.OnViewRemoved(child);
-		}
+			var view = child as LinearLayout;
+			if (view == null)
+				return;
 
-		public void OnClick(View v)
-		{
-			var textView = FindViewById<TextView>(Resource.Id.item_id);
-			GridTapCommand.Execute(textView?.Text);
+			var recycler = FindViewById<GridMvxRecyclerView>(Resource.Id.item_recycler);
+			if (recycler != null)
+				recycler.GridTapCommand = GridTapCommand;
 		}
 	}
 }

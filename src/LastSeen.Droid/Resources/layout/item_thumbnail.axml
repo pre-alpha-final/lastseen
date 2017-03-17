@@ -10,12 +10,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 	<TextView
-		android:id="@+id/section_name"
+		android:id="@+id/item_id"
+		android:layout_width="0px"
+		android:layout_height="0px"
+		android:visibility="invisible"
+		local:MvxBind="Text Id" />
+	<TextView
+		android:id="@+id/item_name"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="Foo"/>
 	<FillWidthMvxImageView
-		android:id="@+id/section_image"
+		android:id="@+id/item_image"
 		android:layout_width="match_parent"
 		android:layout_height="10px"
 		local:MvxBind="ImageUrl Image" />

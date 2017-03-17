@@ -187,6 +187,7 @@
     <Compile Include="Controls\FillWidthButtonBase.cs" />
     <Compile Include="Controls\FillWidthUrlImageButton.cs" />
     <Compile Include="Controls\FillWidthMvxImageView.cs" />
+    <Compile Include="Controls\SectionMvxRecyclerView.cs" />
     <Compile Include="Controls\GridMvxRecyclerView.cs" />
     <Compile Include="Controls\FillWidthImageButton.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
