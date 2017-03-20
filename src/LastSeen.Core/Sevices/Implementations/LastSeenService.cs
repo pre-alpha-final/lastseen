@@ -55,6 +55,15 @@ namespace LastSeen.Core.Sevices.Implementations
 			SaveAllItems();
 		}
 
+		public void DeleteItem(ItemPO itemPo)
+		{
+			EnsureLoaded();
+			var item = _lastSeenItems.FirstOrDefault(e => e.Id == itemPo.Id);
+			_lastSeenItems.Remove(item);
+
+			SaveAllItems();
+		}
+
 		private void SaveAllItems()
 		{
 			_dataStorage.Write(DataFile, _lastSeenItems);

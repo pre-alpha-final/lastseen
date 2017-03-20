@@ -63,5 +63,9 @@ namespace LastSeen.Core.Sevices.Stubs
 		public void SaveItem(ItemPO itemPo)
 		{
 		}
+
+		public void DeleteItem(ItemPO itemPo)
+		{
+		}
 	}
 }

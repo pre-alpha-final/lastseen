@@ -7,13 +7,21 @@
     android:layout_height="match_parent"
 	android:background="#000000">
 	<FillWidthImageButton
-		android:id="@+id/button"
+		android:id="@+id/save_button"
 		android:layout_width="100dp"
 		android:layout_height="wrap_content"
 		android:text="Foo"
 		local:standard_drawable="@drawable/off"
 		local:clicked_drawable="@drawable/on"
 		local:MvxBind="Click SaveCommand"/>
+	<FillWidthImageButton
+		android:id="@+id/delete_button"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:text="Foo"
+		local:standard_drawable="@drawable/off"
+		local:clicked_drawable="@drawable/on"
+		local:MvxBind="Click DeleteCommand"/>
 	<TextView
 		android:id="@+id/section_name"
 		android:layout_width="match_parent"

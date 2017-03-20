@@ -8,5 +8,6 @@ namespace LastSeen.Core.Sevices
 		Dictionary<string, List<ItemPO>> GetItems();
 		ItemPO GetItem(string id);
 		void SaveItem(ItemPO itemPo);
+		void DeleteItem(ItemPO itemPo);
 	}
 }
