@@ -1,7 +1,4 @@
-using System;
-using Android.App;
 using Android.Content;
-using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
@@ -16,13 +13,6 @@ namespace LastSeen.Droid.Controls
 
 		public SectionMvxRecyclerView(Context context, IAttributeSet attrs) : base(context, attrs)
 		{
-		}
-
-		protected override void OnFinishInflate()
-		{
-			base.OnFinishInflate();
-			var layoutManager = new GridLayoutManager(Application.Context, 3, LinearLayoutManager.Vertical, false);
-			SetLayoutManager(layoutManager);
 		}
 
 		public override void OnViewAdded(View child)
