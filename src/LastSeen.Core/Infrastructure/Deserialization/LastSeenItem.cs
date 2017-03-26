@@ -12,7 +12,6 @@ namespace LastSeen.Core.Infrastructure.Deserialization
 		public string Tag { get; set; }
 
 		//Details
-		public string Title { get; set; }
 		public string Description { get; set; }
 		public int Season { get; set; }
 		public int Episode { get; set; }
@@ -31,13 +30,12 @@ namespace LastSeen.Core.Infrastructure.Deserialization
 		public void InitEmpty()
 		{
 			Id = Guid.NewGuid().ToString();
-			Image = "";
-			Name = "<unknown>";
-			Tag = "<unknown>";
-			Title = "<unknown>";
-			Description = "<no description>";
-			Season = 0;
-			Episode = 0;
+			Image = "ImageUrl";
+			Name = "Name";
+			Tag = "Tag";
+			Description = "Description";
+			Season = 1;
+			Episode = 1;
 		}
 	}
 }

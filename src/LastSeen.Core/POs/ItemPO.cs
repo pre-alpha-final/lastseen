@@ -48,17 +48,6 @@ namespace LastSeen.Core.POs
 			}
 		}
 
-		private string _title;
-		public string Title
-		{
-			get { return _title; }
-			set
-			{
-				_title = value;
-				RaisePropertyChanged(() => Title);
-			}
-		}
-
 		private string _description;
 		public string Description
 		{

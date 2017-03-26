@@ -1,35 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
+<ScrollView
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:local="http://schemas.android.com/apk/res-auto"
-	android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:background="#000000">
-	<FillWidthImageButton
-		android:id="@+id/save_button"
-		android:layout_width="100dp"
-		android:layout_height="wrap_content"
-		android:text="Foo"
-		local:standard_drawable="@drawable/off"
-		local:clicked_drawable="@drawable/on"
-		local:MvxBind="Click SaveCommand"/>
-	<FillWidthImageButton
-		android:id="@+id/delete_button"
-		android:layout_width="100dp"
-		android:layout_height="wrap_content"
-		android:text="Foo"
-		local:standard_drawable="@drawable/off"
-		local:clicked_drawable="@drawable/on"
-		local:MvxBind="Click DeleteCommand"/>
-	<TextView
-		android:id="@+id/section_name"
+	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		local:MvxBind="Text ItemPo.Name"/>
-	<FillWidthMvxImageView
-		android:id="@+id/section_image"
-		android:layout_width="300dp"
-		android:layout_height="wrap_content"
-		local:MvxBind="ImageUrl ItemPo.Image" />
-</LinearLayout>
+		android:orientation="vertical">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginBottom="10dp"
+			android:gravity="right">
+			<FillWidthImageButton
+				android:gravity="right"
+				android:layout_width="125dp"
+				android:layout_height="wrap_content"
+				android:text="Save"
+				local:standard_drawable="@drawable/off"
+				local:clicked_drawable="@drawable/on"
+				local:MvxBind="Click SaveCommand"/>
+			<FillWidthImageButton
+				android:layout_width="125dp"
+				android:layout_height="wrap_content"
+				android:text="Delete"
+				local:standard_drawable="@drawable/off"
+				local:clicked_drawable="@drawable/on"
+				local:MvxBind="Click DeleteCommand"/>
+		</LinearLayout>
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			local:MvxBind="Text ItemPo.Name"/>
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			local:MvxBind="Text ItemPo.Tag"/>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:orientation="horizontal">
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:orientation="vertical"
+				android:background="#0ff000">
+				<FillWidthMvxImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_horizontal"
+					local:MvxBind="ImageUrl ItemPo.Image" />
+				<EditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dp"
+					android:singleLine="true"
+					local:MvxBind="Text ItemPo.Image"/>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="2"
+				android:orientation="vertical"
+				android:background="#0ff0ff">
+				<FillWidthMvxImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_horizontal"
+					local:MvxBind="ImageUrl ItemPo.Image" />
+				<EditText
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="10dp"
+					android:singleLine="true"
+					local:MvxBind="Text ItemPo.Image"/>
+			</LinearLayout>
+		</LinearLayout>
+		<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp"
+			android:lines="3"
+			local:MvxBind="Text ItemPo.Description"/>
+	</LinearLayout>
+</ScrollView>
