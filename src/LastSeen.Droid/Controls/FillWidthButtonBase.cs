@@ -19,7 +19,7 @@ namespace LastSeen.Droid.Controls
 
 		protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec)
 		{
-			if (_hasDrawable)
+			if (_hasDrawable && _width == MeasureSpec.GetSize(widthMeasureSpec))
 			{
 				base.OnMeasure(MeasureSpec.MakeMeasureSpec(_width, MeasureSpecMode.Exactly),
 					MeasureSpec.MakeMeasureSpec((int)_height, MeasureSpecMode.Exactly));
@@ -30,7 +30,7 @@ namespace LastSeen.Droid.Controls
 			_height = MeasureSpec.GetSize(widthMeasureSpec);
 
 			var drawable = Background as BitmapDrawable;
-			if (drawable?.Bitmap != null)
+			if (drawable?.Bitmap != null && _width > 0)
 			{
 				_hasDrawable = true;
 				var ratio = (double)drawable.Bitmap.Width / _width;
