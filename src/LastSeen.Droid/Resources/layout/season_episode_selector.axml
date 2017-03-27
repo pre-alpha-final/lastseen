@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<FillWidthImageButton
+			android:id="@+id/episode_down"
+			android:layout_width="25dp"
+			android:layout_margin="5dp"
+			android:layout_height="wrap_content"
+			local:standard_drawable="@drawable/down"
+			local:clicked_drawable="@drawable/down_on"/>
+		<EditText
+			android:id="@+id/episode_edittext"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"/>
+		<FillWidthImageButton
+			android:id="@+id/episode_up"
+			android:layout_width="25dp"
+			android:layout_margin="5dp"
+			android:layout_height="wrap_content"
+			local:standard_drawable="@drawable/up"
+			local:clicked_drawable="@drawable/up_on"/>
+	</LinearLayout>
+</LinearLayout>

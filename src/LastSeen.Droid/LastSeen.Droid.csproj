@@ -188,6 +188,7 @@
     <Compile Include="Controls\FillWidthButtonBase.cs" />
     <Compile Include="Controls\FillWidthUrlImageButton.cs" />
     <Compile Include="Controls\FillWidthMvxImageView.cs" />
+    <Compile Include="Controls\SeasonEpisodeSelector.cs" />
     <Compile Include="Controls\SectionMvxRecyclerView.cs" />
     <Compile Include="Controls\GridMvxRecyclerView.cs" />
     <Compile Include="Controls\FillWidthImageButton.cs" />
@@ -216,6 +217,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\mainView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\season_episode_selector.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -257,6 +261,18 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Attrs.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\down_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-nodpi\up_on.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
