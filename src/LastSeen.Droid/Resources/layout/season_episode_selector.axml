@@ -9,14 +9,14 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
 		<FillWidthImageButton
-			android:id="@+id/episode_down"
+			android:id="@+id/counter_down"
 			android:layout_width="40dp"
 			android:layout_margin="5dp"
 			android:layout_height="wrap_content"
 			local:standard_drawable="@drawable/down"
 			local:clicked_drawable="@drawable/down_on"/>
 		<EditText
-			android:id="@+id/episode_edittext"
+			android:id="@+id/counter_edittext"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="15dp"
@@ -26,7 +26,7 @@
 			android:layout_gravity="center_vertical"
 			android:layout_weight="1"/>
 		<FillWidthImageButton
-			android:id="@+id/episode_up"
+			android:id="@+id/counter_up"
 			android:layout_width="40dp"
 			android:layout_margin="5dp"
 			android:layout_height="wrap_content"

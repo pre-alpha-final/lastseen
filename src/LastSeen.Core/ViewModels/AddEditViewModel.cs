@@ -10,12 +10,15 @@ namespace LastSeen.Core.ViewModels
 	{
 		private readonly ILastSeenService _lastSeenService;
 		private string _id;
+
 		public ItemPO ItemPo { get; set; }
 
 		public AddEditViewModel(ILastSeenService lastSeenService)
 		{
 			_lastSeenService = lastSeenService;
 			DeleteCommand = new MvxCommand(Delete);
+			UpdateSeasonCommand = new MvxCommand<int>(UpdateSeason);
+			UpdateEpisodeCommand = new MvxCommand<int>(UpdateEpisode);
 		}
 
 		public void Init(string id)
@@ -38,6 +41,20 @@ namespace LastSeen.Core.ViewModels
 		{
 			_lastSeenService.DeleteItem(ItemPo);
 			ShowViewModel<LastSeenViewModel>();
+		}
+
+		public IMvxCommand UpdateSeasonCommand { get; }
+		private void UpdateSeason(int counter)
+		{
+			if (ItemPo != null)
+				ItemPo.Season = counter;
+		}
+
+		public IMvxCommand UpdateEpisodeCommand { get; }
+		private void UpdateEpisode(int counter)
+		{
+			if (ItemPo != null)
+				ItemPo.Episode = counter;
 		}
 	}
 }

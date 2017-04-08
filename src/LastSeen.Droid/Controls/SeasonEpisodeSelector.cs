@@ -2,30 +2,32 @@ using Android.Content;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using LastSeen.Core.POs;
+using MvvmCross.Core.ViewModels;
 using System;
 
 namespace LastSeen.Droid.Controls
 {
 	class SeasonEpisodeSelector : LinearLayout
 	{
-		private EditText _episodeEditText;
+		private EditText _counterEditText;
 
-		private ItemPO _itemPO;
-		public ItemPO ItemPo
+		private int _counter;
+		public int Counter
 		{
-			get	{ return _itemPO; }
+			get	{ return _counter; }
 			set
 			{
-				_itemPO = value;
+				_counter = value;
 				SetValues();
 			}
 		}
 
 		private void SetValues()
 		{
-			_episodeEditText.Text = ItemPo.Episode.ToString();
+			_counterEditText.Text = Counter.ToString();
 		}
+
+		public MvxCommand<int> UpdateValue { get; set; }
 
 		public SeasonEpisodeSelector(Context context, IAttributeSet attrs) : base(context, attrs)
 		{
@@ -34,32 +36,34 @@ namespace LastSeen.Droid.Controls
 
 		protected override void OnFinishInflate()
 		{
-			_episodeEditText = FindViewById<EditText>(Resource.Id.episode_edittext);
-			_episodeEditText.AfterTextChanged += EpisodeEditText_AfterTextChanged;
+			_counterEditText = FindViewById<EditText>(Resource.Id.counter_edittext);
+			_counterEditText.AfterTextChanged += CounterEditText_AfterTextChanged;
 			SetValues();
 
-			var episodeUp = FindViewById<FillWidthImageButton>(Resource.Id.episode_up);
-			episodeUp.Click += EpisodeUp_Click;
+			var counterUp = FindViewById<FillWidthImageButton>(Resource.Id.counter_up);
+			counterUp.Click += CounterUp_Click;
 
-			var episodeDown = FindViewById<FillWidthImageButton>(Resource.Id.episode_down);
-			episodeDown.Click += EpisodeDown_Click;
+			var counterDown = FindViewById<FillWidthImageButton>(Resource.Id.counter_down);
+			counterDown.Click += CounterDown_Click;
 
 			base.OnFinishInflate();
 		}
 
-		private void EpisodeEditText_AfterTextChanged(object sender, Android.Text.AfterTextChangedEventArgs e)
+		private void CounterEditText_AfterTextChanged(object sender, Android.Text.AfterTextChangedEventArgs e)
 		{
-			ItemPo.Episode = Int32.Parse(_episodeEditText.Text != "" ? _episodeEditText.Text : "1");
+			_counter = Int32.Parse(_counterEditText.Text != "" ? _counterEditText.Text : "1");
 		}
 
-		private void EpisodeUp_Click(object sender, System.EventArgs e)
+		private void CounterUp_Click(object sender, System.EventArgs e)
 		{
-			_episodeEditText.Text = (ItemPo.Episode + 1).ToString();
+			_counterEditText.Text = (Counter + 1).ToString();
+			UpdateValue?.Execute(Counter);
 		}
 
-		private void EpisodeDown_Click(object sender, EventArgs e)
+		private void CounterDown_Click(object sender, EventArgs e)
 		{
-			_episodeEditText.Text = (ItemPo.Episode - 1).ToString();
+			_counterEditText.Text = (Counter - 1).ToString();
+			UpdateValue?.Execute(Counter);
 		}
 	}
 }
