@@ -22,7 +22,7 @@ namespace LastSeen.Droid.Views
 		MainLauncher = false)]
 	public class MainActivity : MvxAppCompatActivity<MainActivityViewModel>, IMvxFragmentHost, IFragmentCacheableActivity
 	{
-		private MvxViewModel currentViewModel;
+		private static MvxViewModel currentViewModel;
 
 		public IFragmentCacheConfiguration FragmentCacheConfiguration => new DefaultFragmentCacheConfiguration();
 
