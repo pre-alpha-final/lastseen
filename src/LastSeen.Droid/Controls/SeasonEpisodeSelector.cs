@@ -14,10 +14,7 @@ namespace LastSeen.Droid.Controls
 		private ItemPO _itemPO;
 		public ItemPO ItemPo
 		{
-			get
-			{
-				return _itemPO;
-			}
+			get	{ return _itemPO; }
 			set
 			{
 				_itemPO = value;
@@ -44,6 +41,9 @@ namespace LastSeen.Droid.Controls
 			var episodeUp = FindViewById<FillWidthImageButton>(Resource.Id.episode_up);
 			episodeUp.Click += EpisodeUp_Click;
 
+			var episodeDown = FindViewById<FillWidthImageButton>(Resource.Id.episode_down);
+			episodeDown.Click += EpisodeDown_Click;
+
 			base.OnFinishInflate();
 		}
 
@@ -55,6 +55,11 @@ namespace LastSeen.Droid.Controls
 		private void EpisodeUp_Click(object sender, System.EventArgs e)
 		{
 			_episodeEditText.Text = (ItemPo.Episode + 1).ToString();
+		}
+
+		private void EpisodeDown_Click(object sender, EventArgs e)
+		{
+			_episodeEditText.Text = (ItemPo.Episode - 1).ToString();
 		}
 	}
 }

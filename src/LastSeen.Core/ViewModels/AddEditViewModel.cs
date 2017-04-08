@@ -15,7 +15,6 @@ namespace LastSeen.Core.ViewModels
 		public AddEditViewModel(ILastSeenService lastSeenService)
 		{
 			_lastSeenService = lastSeenService;
-			SaveCommand = new MvxCommand(Save);
 			DeleteCommand = new MvxCommand(Delete);
 		}
 
@@ -32,13 +31,6 @@ namespace LastSeen.Core.ViewModels
 			{
 				ItemPo = Mapper.Map<ItemPO>(new LastSeenItem(true));
 			}
-		}
-
-		public IMvxCommand SaveCommand { get; }
-		private void Save()
-		{
-			_lastSeenService.SaveItem(ItemPo);
-			ShowViewModel<LastSeenViewModel>();
 		}
 
 		public IMvxCommand DeleteCommand { get; }

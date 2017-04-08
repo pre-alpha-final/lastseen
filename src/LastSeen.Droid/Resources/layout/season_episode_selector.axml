@@ -10,7 +10,7 @@
 		android:layout_height="wrap_content">
 		<FillWidthImageButton
 			android:id="@+id/episode_down"
-			android:layout_width="25dp"
+			android:layout_width="40dp"
 			android:layout_margin="5dp"
 			android:layout_height="wrap_content"
 			local:standard_drawable="@drawable/down"
@@ -19,10 +19,15 @@
 			android:id="@+id/episode_edittext"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_marginLeft="15dp"
+			android:layout_marginRight="15dp"
+			android:textSize="26sp"
+			android:gravity="center_horizontal"
+			android:layout_gravity="center_vertical"
 			android:layout_weight="1"/>
 		<FillWidthImageButton
 			android:id="@+id/episode_up"
-			android:layout_width="25dp"
+			android:layout_width="40dp"
 			android:layout_margin="5dp"
 			android:layout_height="wrap_content"
 			local:standard_drawable="@drawable/up"
