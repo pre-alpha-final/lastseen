@@ -39,7 +39,7 @@ namespace LastSeen.Droid.Controls
 
 		public void OnClick(View v)
 		{
-			var textView = FindViewById<TextView>(Resource.Id.item_id);
+			var textView = v.FindViewById<TextView>(Resource.Id.item_id);
 			GridTapCommand.Execute(textView?.Text);
 		}
 	}
