@@ -27,7 +27,7 @@ namespace LastSeen.Droid.Controls
 			if (view == null)
 				return;
 
-			var recycler = FindViewById<GridMvxRecyclerView>(Resource.Id.item_recycler);
+			var recycler = child.FindViewById<GridMvxRecyclerView>(Resource.Id.item_recycler);
 			if (recycler != null)
 				recycler.GridTapCommand = GridTapCommand;
 		}
