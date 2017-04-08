@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Infrastructure\Deserialization\LastSeenItem.cs" />
+    <Compile Include="Infrastructure\Interfaces\IClosable.cs" />
     <Compile Include="Infrastructure\MapperProfiles\LastSeenProfile.cs" />
     <Compile Include="POs\ItemPO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

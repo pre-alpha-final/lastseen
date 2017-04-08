@@ -3,10 +3,11 @@ using LastSeen.Core.Infrastructure.Deserialization;
 using LastSeen.Core.POs;
 using LastSeen.Core.Sevices;
 using MvvmCross.Core.ViewModels;
+using LastSeen.Core.Infrastructure.Interfaces;
 
 namespace LastSeen.Core.ViewModels
 {
-	public class AddEditViewModel : MvxViewModel
+	public class AddEditViewModel : MvxViewModel, ICloseable
 	{
 		private readonly ILastSeenService _lastSeenService;
 		private string _id;
@@ -55,6 +56,11 @@ namespace LastSeen.Core.ViewModels
 		{
 			if (ItemPo != null)
 				ItemPo.Episode = counter;
+		}
+
+		public void OnClose()
+		{
+			_lastSeenService.SaveItem(ItemPo);
 		}
 	}
 }
