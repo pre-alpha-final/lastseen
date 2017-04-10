@@ -13,10 +13,11 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal"
-			android:layout_marginBottom="10dp"
 			android:gravity="right">
 			<FillWidthImageButton
-				android:layout_width="125dp"
+				android:layout_width="140dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="10dp"
 				android:layout_height="wrap_content"
 				android:text="Delete"
 				local:standard_drawable="@drawable/off"
@@ -42,6 +43,9 @@
 				android:layout_width="0dp"
 				android:layout_height="match_parent"
 				android:layout_weight="1"
+				android:gravity="center_vertical"
+				android:layout_marginTop="5dp"
+				android:layout_marginRight="15dp"
 				android:orientation="vertical">
 				<FillWidthMvxImageView
 					android:layout_width="match_parent"
@@ -89,8 +93,8 @@
 		<EditText
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_margin="10dp"
-			android:lines="3"
+			android:layout_marginLeft="10dp"
+			android:layout_marginRight="10dp"
 			local:MvxBind="Text ItemPo.Description"/>
 	</LinearLayout>
 </ScrollView>

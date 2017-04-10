@@ -4,6 +4,8 @@ using LastSeen.Core.POs;
 using LastSeen.Core.Sevices;
 using MvvmCross.Core.ViewModels;
 using LastSeen.Core.Infrastructure.Interfaces;
+using MvvmCross.Platform;
+using Chance.MvvmCross.Plugins.UserInteraction;
 
 namespace LastSeen.Core.ViewModels
 {
@@ -38,10 +40,13 @@ namespace LastSeen.Core.ViewModels
 		}
 
 		public IMvxCommand DeleteCommand { get; }
-		private void Delete()
+		private async void Delete()
 		{
-			_lastSeenService.DeleteItem(ItemPo);
-			ShowViewModel<LastSeenViewModel>();
+			if (await Mvx.Resolve<IUserInteraction>().ConfirmAsync("U sure?", string.Empty, "Yup", "Nope"))
+			{
+				_lastSeenService.DeleteItem(ItemPo);
+				ShowViewModel<LastSeenViewModel>();
+			}
 		}
 
 		public IMvxCommand UpdateSeasonCommand { get; }

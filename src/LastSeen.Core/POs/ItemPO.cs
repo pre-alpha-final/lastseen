@@ -11,7 +11,7 @@ namespace LastSeen.Core.POs
 			set
 			{
 				_id = value;
-				RaisePropertyChanged(() => Id);
+				RaisePropertyChanged();
 			}
 		}
 
@@ -22,7 +22,7 @@ namespace LastSeen.Core.POs
 			set
 			{
 				_image = value;
-				RaisePropertyChanged(() => Image);
+				RaisePropertyChanged();
 			}
 		}
 
@@ -33,7 +33,7 @@ namespace LastSeen.Core.POs
 			set
 			{
 				_name = value;
-				RaisePropertyChanged(() => Name);
+				RaisePropertyChanged();
 			}
 		}
 
@@ -44,7 +44,7 @@ namespace LastSeen.Core.POs
 			set
 			{
 				_tag = value;
-				RaisePropertyChanged(() => Tag);
+				RaisePropertyChanged();
 			}
 		}
 
@@ -55,7 +55,7 @@ namespace LastSeen.Core.POs
 			set
 			{
 				_description = value;
-				RaisePropertyChanged(() => Description);
+				RaisePropertyChanged();
 			}
 		}
 
@@ -66,7 +66,8 @@ namespace LastSeen.Core.POs
 			set
 			{
 				_season = value;
-				RaisePropertyChanged(() => Season);
+				RaisePropertyChanged();
+				RaisePropertyChanged(() => SeasonEpisode);
 			}
 		}
 
@@ -77,8 +78,14 @@ namespace LastSeen.Core.POs
 			set
 			{
 				_episode = value;
-				RaisePropertyChanged(() => Episode);
+				RaisePropertyChanged();
+				RaisePropertyChanged(() => SeasonEpisode);
 			}
+		}
+
+		public string SeasonEpisode
+		{
+			get { return $"S: {Season}, E: {Episode}"; }
 		}
 	}
 }

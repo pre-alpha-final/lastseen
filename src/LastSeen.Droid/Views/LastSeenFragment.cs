@@ -14,10 +14,6 @@ namespace LastSeen.Droid.Views
 		{
 			var view = base.OnCreateView(inflater, container, savedInstanceState);
 
-			var urlButton = view.FindViewById<FillWidthUrlImageButton>(Resource.Id.urlbutton);
-			urlButton.StandardUrl = "https://cdn2.iconfinder.com/data/icons/freeicons/PNG_256x256/Rectangle%20Blue.png";
-			urlButton.ClickedUrl = "https://cdn2.iconfinder.com/data/icons/freeicons/PNG_256x256/Rectangle%20Green.png";
-
 			return view;
 		}
 	}

@@ -28,6 +28,9 @@ namespace LastSeen.Droid.Controls
 		public override void OnViewAdded(View child)
 		{
 			child.SetOnClickListener(this);
+			var seasonEpisodeTextView = child.FindViewById<TextView>(Resource.Id.item_season_episode);
+			seasonEpisodeTextView.SetTextColor(Android.Graphics.Color.Gray);
+
 			base.OnViewAdded(child);
 		}
 

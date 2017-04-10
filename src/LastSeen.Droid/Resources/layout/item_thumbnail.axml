@@ -6,7 +6,7 @@
 	android:layout_marginTop="5dp"
 	android:layout_marginLeft="5dp"
 	android:layout_marginRight="5dp"
-	android:layout_marginBottom="5dp"
+	android:layout_marginBottom="10dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 	<TextView
@@ -26,4 +26,10 @@
 		android:layout_height="10px"
 		android:padding="5dp"
 		local:MvxBind="ImageUrl Image" />
+	<TextView
+		android:id="@+id/item_season_episode"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		local:MvxBind="Text SeasonEpisode"/>
 </LinearLayout>
