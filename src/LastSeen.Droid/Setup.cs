@@ -57,7 +57,7 @@ namespace LastSeen.Droid
 
 				return new MvxDownloadCacheConfiguration
 				{
-					MaxFileAge = TimeSpan.FromDays(365),
+					MaxFileAge = TimeSpan.MaxValue,
 					MaxFiles = 1000,
 					MaxInMemoryFiles = 20,
 					MaxInMemoryBytes = mem,
