@@ -43,7 +43,7 @@
     <Compile Include="Infrastructure\MapperProfiles\LastSeenProfile.cs" />
     <Compile Include="POs\ItemPO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sevices\DataStorage.cs" />
+    <Compile Include="Sevices\IDataStorage.cs" />
     <Compile Include="Sevices\ILastSeenService.cs" />
     <Compile Include="Sevices\Implementations\DataStorage.cs" />
     <Compile Include="Sevices\Implementations\LastSeenService.cs" />

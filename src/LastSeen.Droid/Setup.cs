@@ -8,6 +8,9 @@ using MvvmCross.Platform.Plugins;
 using MvvmCross.Plugins.DownloadCache.Droid;
 using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Shared.Presenter;
+using MvvmCross.Platform;
+using LastSeen.Core.Sevices;
+using LastSeen.Droid.Sevices.Implementations;
 
 namespace LastSeen.Droid
 {
@@ -20,6 +23,8 @@ namespace LastSeen.Droid
 
 		protected override IMvxApplication CreateApp()
 		{
+			Mvx.LazyConstructAndRegisterSingleton<IDataStorage, DataStorageDroid>();
+
 			return new App();
 		}
 

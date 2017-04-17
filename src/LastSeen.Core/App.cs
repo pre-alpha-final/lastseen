@@ -22,7 +22,6 @@ namespace LastSeen.Core
 			});
 
 			Mvx.LazyConstructAndRegisterSingleton<ILastSeenService, LastSeenService>();
-			Mvx.LazyConstructAndRegisterSingleton<IDataStorage, DataStorage>();
 
 			base.Initialize();
 		}

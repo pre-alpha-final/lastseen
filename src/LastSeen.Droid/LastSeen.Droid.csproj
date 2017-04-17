@@ -53,6 +53,8 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AotAssemblies>True</AotAssemblies>
+    <EnableLLVM>True</EnableLLVM>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Chance.MvvmCross.Plugins.UserInteraction, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -201,6 +203,7 @@
     <Compile Include="Controls\FillWidthImageButton.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Implementations\DataStorageDroid.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\AddEditFragment.cs" />
     <Compile Include="Views\BaseFragment.cs" />
