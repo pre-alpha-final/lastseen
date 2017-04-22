@@ -36,7 +36,7 @@ namespace LastSeen.Droid.Controls
 
 		protected override void OnFinishInflate()
 		{
-			_counterEditText = FindViewById<EditText>(Resource.Id.counter_edittext);
+			_counterEditText = FindViewWithTag("counter_edittext") as EditText;
 			_counterEditText.AfterTextChanged += CounterEditText_AfterTextChanged;
 			SetValues();
 

@@ -16,7 +16,7 @@
 			local:standard_drawable="@drawable/down"
 			local:clicked_drawable="@drawable/down_on"/>
 		<EditText
-			android:id="@+id/counter_edittext"
+			android:tag="counter_edittext"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="15dp"
