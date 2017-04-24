@@ -208,6 +208,8 @@
     <Compile Include="Controls\SectionMvxRecyclerView.cs" />
     <Compile Include="Controls\GridMvxRecyclerView.cs" />
     <Compile Include="Controls\FillWidthImageButton.cs" />
+    <Compile Include="Converters\IntToStringConverter.cs" />
+    <Compile Include="Converters\IntToVisibilityConverter.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

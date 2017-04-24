@@ -83,6 +83,17 @@ namespace LastSeen.Core.POs
 			}
 		}
 
+		private int _minutesWatched;
+		public int MinutesWatched
+		{
+			get { return _minutesWatched; }
+			set
+			{
+				_minutesWatched = value;
+				RaisePropertyChanged();
+			}
+		}
+
 		public string SeasonEpisode
 		{
 			get { return $"S: {Season}, E: {Episode}"; }

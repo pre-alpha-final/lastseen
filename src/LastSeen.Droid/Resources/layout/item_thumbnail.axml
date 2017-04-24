@@ -20,12 +20,28 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		local:MvxBind="Text Name"/>
-	<FillWidthMvxImageView
-		android:id="@+id/item_image"
+	<RelativeLayout
 		android:layout_width="match_parent"
-		android:layout_height="10px"
-		android:padding="5dp"
-		local:MvxBind="ImageUrl Image" />
+		android:layout_height="wrap_content">
+		<FillWidthMvxImageView
+			android:id="@+id/item_image"
+			android:layout_width="match_parent"
+			android:layout_height="10px"
+			android:padding="5dp"
+			local:MvxBind="ImageUrl Image" />
+		<TextView
+			android:id="@+id/minutes_watched"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:gravity="center"
+			android:paddingTop="3dp"
+			android:paddingBottom="3dp"
+			android:textSize="18sp"
+			android:background="#000000"
+			android:text="Unfinished"
+			local:MvxBind="Visibility MinutesWatched, Converter=IntToVisibility" />
+	</RelativeLayout>
 	<TextView
 		android:id="@+id/item_season_episode"
 		android:layout_width="match_parent"

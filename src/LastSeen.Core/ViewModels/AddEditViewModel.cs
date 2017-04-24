@@ -54,6 +54,7 @@ namespace LastSeen.Core.ViewModels
 		{
 			if (ItemPo != null)
 				ItemPo.Season = counter;
+			ItemPo.MinutesWatched = 0;
 		}
 
 		public IMvxCommand UpdateEpisodeCommand { get; }
@@ -61,6 +62,7 @@ namespace LastSeen.Core.ViewModels
 		{
 			if (ItemPo != null)
 				ItemPo.Episode = counter;
+			ItemPo.MinutesWatched = 0;
 		}
 
 		public void OnClose()

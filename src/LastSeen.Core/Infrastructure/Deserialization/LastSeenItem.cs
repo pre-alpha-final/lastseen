@@ -15,6 +15,7 @@ namespace LastSeen.Core.Infrastructure.Deserialization
 		public string Description { get; set; }
 		public int Season { get; set; }
 		public int Episode { get; set; }
+		public int MinutesWatched { get; set; }
 
 		// Default constructor for use with deserialization
 		public LastSeenItem()
@@ -36,6 +37,7 @@ namespace LastSeen.Core.Infrastructure.Deserialization
 			Description = "Description";
 			Season = 1;
 			Episode = 1;
+			MinutesWatched = 0;
 		}
 	}
 }
